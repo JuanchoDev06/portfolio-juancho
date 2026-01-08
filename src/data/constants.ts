@@ -24,6 +24,24 @@ export enum SkillNames {
   AWS = "aws",
   VIM = "vim",
   VERCEL = "vercel",
+
+  // Frontend 
+  ANGULAR = "angular",
+
+    // Backend / Java
+  JAVA = "java",
+  SPRING = "spring",
+
+  // Bases de datos
+  MYSQL = "mysql",
+  ORACLE = "oracle",
+
+  // 🆕 Tools
+  INTELLIJ = "intellij",
+  POSTMAN = "postman",
+  MAVEN = "maven",
+  GRADLE = "gradle",
+  VITE = "vite",
 }
 export type Skill = {
   id: number;
@@ -33,7 +51,7 @@ export type Skill = {
   color: string;
   icon: string;
 };
-export const SKILLS: Record<SkillNames, Skill> = {
+export const SKILLS: Partial<Record<SkillNames, Skill>> = {
   [SkillNames.JS]: {
     id: 1,
     name: "js",
@@ -76,15 +94,6 @@ using use = useUsing("use")`,
     color: "#61dafb",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
   },
-  [SkillNames.VUE]: {
-    id: 6,
-    name: "vue",
-    label: "Vue",
-    shortDescription:
-      "the chill pill for your frontend, it hits different! 🟢😌",
-    color: "#41b883",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-  },
   [SkillNames.NEXTJS]: {
     id: 7,
     name: "nextjs",
@@ -100,7 +109,7 @@ using use = useUsing("use")`,
     label: "Tailwind",
     shortDescription: "utility classes hitting different fr fr 🌪️🔥",
     color: "#38bdf8",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+    icon: "https://cdn.simpleicons.org/tailwindcss/38BDF8"
   },
   [SkillNames.NODEJS]: {
     id: 9,
@@ -110,14 +119,6 @@ using use = useUsing("use")`,
     color: "#6cc24a",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
   },
-  [SkillNames.EXPRESS]: {
-    id: 10,
-    name: "express",
-    label: "Express",
-    shortDescription: "middlewares go dummy hard, no cap! 🚂💨",
-    color: "#fff",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-  },
   [SkillNames.POSTGRES]: {
     id: 11,
     name: "postgres",
@@ -125,14 +126,6 @@ using use = useUsing("use")`,
     shortDescription: "SQL but make it fashion, purr 💅🐘",
     color: "#336791",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-  },
-  [SkillNames.MONGODB]: {
-    id: 12,
-    name: "mongodb",
-    label: "MongoDB",
-    shortDescription: "flexin' with that NoSQL drip, respectfully! 💪🍃",
-    color: "#336791",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
   },
   [SkillNames.GIT]: {
     id: 13,
@@ -156,7 +149,7 @@ using use = useUsing("use")`,
     label: "Prettier",
     shortDescription: "making your code not a whole mess, thank u next 🧹✨",
     color: "#f7b93a",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prettier/prettier-original.svg",
+    icon: "https://cdn.simpleicons.org/prettier/F7B93E"
   },
   [SkillNames.NPM]: {
     id: 16,
@@ -166,72 +159,94 @@ using use = useUsing("use")`,
     color: "#fff",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg",
   },
-  [SkillNames.FIREBASE]: {
-    id: 17,
-    name: "firebase",
-    label: "Firebase",
-    shortDescription:
-      "your app's ultimate wingman, but watch out, vendor lock-in vibes! 🔥👌",
-    color: "#ffca28",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-  },
-  [SkillNames.WORDPRESS]: {
-    id: 18,
-    name: "wordpress",
-    label: "WordPress",
-    shortDescription: "the grandpa of CMS, still rocking that cane 🧓👴",
-    color: "#007acc",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg",
-  },
-  [SkillNames.LINUX]: {
-    id: 19,
-    name: "linux",
-    label: "Linux",
-    shortDescription: "where 'chmod 777' is the ultimate flex 🔓🙌",
-    color: "#fff",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
-  },
-  [SkillNames.DOCKER]: {
-    id: 20,
-    name: "docker",
-    label: "Docker",
-    shortDescription: "The best containerization! 🐳🔥",
-    color: "#2496ed",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-  },
-  [SkillNames.NGINX]: {
-    id: 21,
-    name: "nginx",
-    label: "NginX",
-    shortDescription: "reverse proxy go zoom zoom, sheesh! 🚗💨",
-    color: "#008000",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg",
-  },
   [SkillNames.AWS]: {
     id: 22,
     name: "aws",
     label: "AWS",
     shortDescription:
-      "always extra, making everything more complicated, period! 🌐👨‍💻",
+      "Cloud platform for scalable, secure and highly available systems.",
     color: "#ff9900",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg",
+icon: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
   },
-  [SkillNames.VIM]: {
-    id: 23,
-    name: "vim",
-    label: "Vim",
-    shortDescription: "exit? In this economy? Ight, imma head out! 🚪🏃",
-    color: "#e34c26",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vim/vim-original.svg",
+  [SkillNames.JAVA]: {
+  id: 25,
+  name: "java",
+  label: "Java",
+  shortDescription: "Strongly typed language for building robust backend systems.",
+  color: "#f89820",
+  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
   },
-  [SkillNames.VERCEL]: {
-    id: 24,
-    name: "vercel",
-    label: "Vercel",
-    shortDescription:
-      "The triangle compony, helps you deploy and go touch grass! 🚀🌿",
-    color: "#6cc24a",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
+  [SkillNames.SPRING]: {
+  id: 26,
+  name: "spring",
+  label: "Spring Boot",
+  shortDescription: "Framework for building scalable REST APIs and microservices.",
+  color: "#6db33f",
+  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+  },
+  [SkillNames.ANGULAR]: {
+  id: 27,
+  name: "angular",
+  label: "Angular",
+  shortDescription: "Frontend framework for building enterprise-scale applications.",
+  color: "#dd0031",
+  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
+  },
+  [SkillNames.MYSQL]: {
+  id: 28,
+  name: "mysql",
+  label: "MySQL",
+  shortDescription: "Relational database for structured and transactional data.",
+  color: "#00758f",
+  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  },
+  [SkillNames.ORACLE]: {
+  id: 29,
+  name: "oracle",
+  label: "Oracle SQL",
+  shortDescription: "Enterprise-grade relational database system.",
+  color: "#f80000",
+  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg",
+  },
+  [SkillNames.INTELLIJ]: {
+  id: 30,
+  name: "intellij",
+  label: "IntelliJ IDEA",
+  shortDescription: "Powerful IDE for Java and backend development.",
+  color: "#000000",
+  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg",
+  },
+  [SkillNames.POSTMAN]: {
+  id: 31,
+  name: "postman",
+  label: "Postman",
+  shortDescription: "API testing and debugging tool for backend development.",
+  color: "#ff6c37",
+  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
+  },
+  [SkillNames.MAVEN]: {
+  id: 32,
+  name: "maven",
+  label: "Maven",
+  shortDescription: "Dependency management and build automation tool for Java.",
+  color: "#c71a36",
+  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg",
+  },
+  [SkillNames.GRADLE]: {
+  id: 33,
+  name: "gradle",
+  label: "Gradle",
+  shortDescription: "Modern build automation system for JVM projects.",
+  color: "#02303a",
+  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg",
+  },
+  [SkillNames.VITE]: {
+  id: 34,
+  name: "vite",
+  label: "Vite",
+  shortDescription: "Fast frontend build tool and dev server.",
+  color: "#646cff",
+  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg",
   },
 };
 
@@ -248,41 +263,38 @@ export type Experience = {
 export const EXPERIENCE: Experience[] = [
   {
     id: 1,
-    startDate: "Dec 2024",
-    endDate: "Present",
-    title: "Full Stack Engineer",
-    company: "OmniNexus",
+    startDate: "Apr 2025",
+    endDate: "Oct 2025",
+    title: "Junior Developer",
+    company: "TCS",
     description: [
-      "Developing scalable full-stack applications involved in complex systems.",
-      "Optimizing database performance and query efficiency.",
-      "Collaborating on architectural decisions and technical strategy.",
+      "Delivered web solutions for diverse clients.",
+      "I worked on projects and agile software lifecycles from design to deployment.",
+      "I developed full-stack applications with teammates.",
     ],
     skills: [
-      SkillNames.NEXTJS,
-      SkillNames.TS,
-      SkillNames.POSTGRES,
-      SkillNames.DOCKER,
-      SkillNames.AWS,
-    ],
+    SkillNames.ANGULAR,
+    SkillNames.SPRING,
+    SkillNames.POSTGRES,
+  ],
   },
   {
     id: 2,
-    startDate: "Apr 2022",
-    endDate: "Dec 2024",
-    title: "Freelance Developer",
-    company: "Live & Learn",
+    startDate: "Aug 2023",
+    endDate: "Jun 2025",
+    title: "Professional technician in information systems.",
+    company: "Politecnico Jaime Isaza Cadavid",
     description: [
-      "Delivered custom web solutions for diverse clients.",
-      "Managed full project lifecycles from design to deployment.",
-      "Maintained high client satisfaction through effective communication.",
+      "2 years of experience in software development.",
+      "Studied programming languages, web frameworks and cloud technologies.",
+      "I won best semester project award for developing a web application.",
     ],
     skills: [
-      SkillNames.REACT,
-      SkillNames.NODEJS,
-      SkillNames.MONGODB,
-      SkillNames.TAILWIND,
-      SkillNames.WORDPRESS,
-    ],
+    SkillNames.SPRING,
+    SkillNames.ORACLE,
+    SkillNames.REACT,
+    SkillNames.AWS,
+  ],
   },
 ];
 
