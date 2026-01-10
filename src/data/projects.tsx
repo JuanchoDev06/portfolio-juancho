@@ -10,24 +10,14 @@ import { ReactNode } from "react";
 import { RiNextjsFill, RiNodejsFill, RiReactjsFill } from "react-icons/ri";
 import { FaAws } from "react-icons/fa";
 import {
-  SiChakraui,
   SiDocker,
-  SiExpress,
-  SiFirebase,
   SiJavascript,
   SiMongodb,
   SiPostgresql,
-  SiPrisma,
   SiPython,
   SiReactquery,
-  SiSanity,
-  SiShadcnui,
-  SiSocketdotio,
-  SiSupabase,
   SiTailwindcss,
-  SiThreedotjs,
   SiTypescript,
-  SiVuedotjs,
   SiSpring,
   SiMysql,
   SiHtml5,
@@ -37,33 +27,22 @@ import {
 import { TbBrandFramerMotion } from "react-icons/tb";
 const BASE_PATH = "/assets/projects-screenshots";
 
-const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
+const ProjectsLinks = ({ repo }: { repo?: string }) => {
+  if (!repo) return null;
+
   return (
-    <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
+    <div className="flex items-center justify-start gap-3 my-3 mb-8">
       <Link
         className="font-mono underline flex gap-2"
         rel="noopener"
         target="_new"
-        href={live}
+        href={repo}
       >
         <Button variant={"default"} size={"sm"}>
-          Visit Website
+          Github
           <ArrowUpRight className="ml-3 w-5 h-5" />
         </Button>
       </Link>
-      {repo && (
-        <Link
-          className="font-mono underline flex gap-2"
-          rel="noopener"
-          target="_new"
-          href={repo}
-        >
-          <Button variant={"default"} size={"sm"}>
-            Github
-            <ArrowUpRight className="ml-3 w-5 h-5" />
-          </Button>
-        </Link>
-      )}
     </div>
   );
 };
@@ -81,12 +60,6 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <RiNextjsFill />,
   },
-  chakra: {
-    title: "Chakra UI",
-    bg: "black",
-    fg: "white",
-    icon: <SiChakraui />,
-  },
   node: {
     title: "Node.js",
     bg: "black",
@@ -98,12 +71,6 @@ const PROJECT_SKILLS = {
     bg: "black",
     fg: "white",
     icon: <SiPython />,
-  },
-  prisma: {
-    title: "prisma",
-    bg: "black",
-    fg: "white",
-    icon: <SiPrisma />,
   },
   postgres: {
     title: "PostgreSQL",
@@ -117,29 +84,11 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <SiMongodb />,
   },
-  express: {
-    title: "Express",
-    bg: "black",
-    fg: "white",
-    icon: <SiExpress />,
-  },
   reactQuery: {
     title: "React Query",
     bg: "black",
     fg: "white",
     icon: <SiReactquery />,
-  },
-  shadcn: {
-    title: "ShanCN UI",
-    bg: "black",
-    fg: "white",
-    icon: <SiShadcnui />,
-  },
-  aceternity: {
-    title: "Aceternity",
-    bg: "black",
-    fg: "white",
-    icon: <AceTernityLogo />,
   },
   tailwind: {
     title: "Tailwind",
@@ -153,28 +102,6 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <SiDocker />,
   },
-  yjs: {
-    title: "Y.js",
-    bg: "black",
-    fg: "white",
-    icon: (
-      <span>
-        <strong>Y</strong>js
-      </span>
-    ),
-  },
-  firebase: {
-    title: "Firebase",
-    bg: "black",
-    fg: "white",
-    icon: <SiFirebase />,
-  },
-  sockerio: {
-    title: "Socket.io",
-    bg: "black",
-    fg: "white",
-    icon: <SiSocketdotio />,
-  },
   js: {
     title: "JavaScript",
     bg: "black",
@@ -187,47 +114,11 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <SiTypescript />,
   },
-  vue: {
-    title: "Vue.js",
-    bg: "black",
-    fg: "white",
-    icon: <SiVuedotjs />,
-  },
   react: {
     title: "React.js",
     bg: "black",
     fg: "white",
     icon: <RiReactjsFill />,
-  },
-  sanity: {
-    title: "Sanity",
-    bg: "black",
-    fg: "white",
-    icon: <SiSanity />,
-  },
-  spline: {
-    title: "Spline",
-    bg: "black",
-    fg: "white",
-    icon: <SiThreedotjs />,
-  },
-  gsap: {
-    title: "GSAP",
-    bg: "black",
-    fg: "white",
-    icon: "",
-  },
-  framerMotion: {
-    title: "Framer Motion",
-    bg: "black",
-    fg: "white",
-    icon: <TbBrandFramerMotion />,
-  },
-  supabase: {
-    title: "Supabase",
-    bg: "black",
-    fg: "white",
-    icon: <SiSupabase />,
   },
   spring: {
     title: "Spring",
@@ -275,7 +166,6 @@ export type Project = {
   skills: { frontend: Skill[]; backend: Skill[]; };
   content: React.ReactNode | any;
   github?: string;
-  live: string;
 };
 const projects: Project[] = [
   {
@@ -295,7 +185,6 @@ const projects: Project[] = [
         PROJECT_SKILLS.mysql,
       ],
     },
-    live: "https://www.codingducks.xyz/",
     github: "https://github.com/caes2004/Spring_EcoBoost",
     get content() {
       return (
@@ -303,73 +192,51 @@ const projects: Project[] = [
           <TypographyP className="font-mono text-2xl text-center">
             Ecoboost = Recycle + Job oportunities + Web development
           </TypographyP>
-          <TypographyP className="font-mono ">
-            Coding Ducks is your coding dojo — where you level up your skills,
-            battle in real-time code duels, and earn badges like a true code
-            warrior. Track your progress, flex your brain, and climb the
-            leaderboard. Ready to quack the code?
+          <TypographyP className="font-mono">
+            EcoBoost is an e-commerce web application focused on the buying and selling of
+            recyclable products. It was developed using Java with Spring Boot, HTML, CSS,
+            and a MySQL database, with the goal of promoting economic growth among sellers
+            and buyers at a regional, national, and even international level.
           </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Problems </TypographyH3>
+          <ProjectsLinks repo={this.github} />
+          <SlideShow
+            images={[
+              `${BASE_PATH}/ecoboost/register.png`,
+              `${BASE_PATH}/ecoboost/login.png`,
+              `${BASE_PATH}/ecoboost/home_page_1.png`,
+              `${BASE_PATH}/ecoboost/home_page_2.png`,
+            ]}
+          />
+          <br />
+          <TypographyH3 className="my-4 mt-8">Problem Statement</TypographyH3>
+          
           <p className="font-mono mb-2">
-            Solve coding problems similar to LeetCode, enhancing your
-            problem-solving skills across various languages.
+            Beyond expanding the reach of independent businesses, EcoBoost encourages
+            recycling and environmental responsibility by providing a digital platform
+            that supports sustainable practices and contributes to a cleaner, more
+            sustainable planet.
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/codingducks/problems.png`,
-              `${BASE_PATH}/codingducks/problem.png`,
+              `${BASE_PATH}/ecoboost/welcome_ecoboost.png`,
+              `${BASE_PATH}/ecoboost/home_user.png`,
+              `${BASE_PATH}/ecoboost/profile_user.png`,
+              `${BASE_PATH}/ecoboost/products_view.png`,
+              `${BASE_PATH}/ecoboost/carrito_compras.png`,
             ]}
           />
-          <TypographyH3 className="my-4 mt-8">Ducklets</TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Award🏆</TypographyH3>
           <p className="font-mono mb-2">
-            Collaborate in real-time with others in a multiplayer coding
-            environment, just like CodePen but with a social twist.
+            This project was recognized as the <strong>Best Semester Project</strong>,
+            highlighting both its technical implementation and its positive social and
+            environmental impact.
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/codingducks/ducklets.png`,
-              `${BASE_PATH}/codingducks/ducklet1.png`,
-              `${BASE_PATH}/codingducks/ducklet2.png`,
+              `${BASE_PATH}/ecoboost/award.png`
             ]}
           />
-          <TypographyH3 className="my-4 mt-8">UI Battles </TypographyH3>
-
-          <p className="font-mono mb-2">
-            Challenge yourself to create UI components with HTML/CSS/JS, and get
-            instant feedback with an automated similarity scoring.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/css-battles.png`,
-              `${BASE_PATH}/codingducks/css-battle.png`,
-              `${BASE_PATH}/codingducks/css-battle2.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Contests </TypographyH3>
-          <p className="font-mono mb-2">
-            Organize or participate in coding competitions. Successfully used to
-            host three contests during college.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/contests.png`]} />
-          <TypographyH3 className="my-4 mt-8">Playground </TypographyH3>
-          <p className="font-mono mb-2">
-            Test and execute your code instantly in my versatile online code
-            runner.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/playground.png`]} />
-          <TypographyH3 className="my-4 mt-8">Users</TypographyH3>
-
-          <p className="font-mono mb-2">
-            Track your progress, earn badges, and climb the rankings with
-            detailed user profiles and activity tracking.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/users.png`,
-              `${BASE_PATH}/codingducks/user.png`,
-            ]}
-          />
+          
         </div>
       );
     },
@@ -380,7 +247,7 @@ const projects: Project[] = [
     title: "Artists JDBC",
     src: "/assets/projects-screenshots/artistasJDBC/music_homepage.png",
     screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png"],
-    live: "https://www.couponluxury.com/",
+    github: "https://github.com/JuanchoDev06/ArtistasJDBC",
     skills: {
       frontend: [
         PROJECT_SKILLS.html,
@@ -396,58 +263,49 @@ const projects: Project[] = [
       return (
         <div>
           <TypographyP className="font-mono ">
-            CouponLuxury is your go-to destination for snagging the best deals
-            without lifting a finger. Whether you&apos;re hunting for the latest
-            discounts or trying to save a buck at your favorite stores,
-            CouponLuxury&apos;s got you covered.
+            Artists JDBC is an academic project developed as part of the course
+            <strong> Software Construction II</strong>. The main goal of this project was
+            to strengthen my understanding of backend development using Spring Boot,
+            focusing on data persistence, application layering, and direct database
+            interaction through JDBC.
           </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <p className="font-mono mb-2 mt-4">
-            As soon as you land, boom! You&apos;re greeted with the freshest
-            coupons and top-tier deals that&apos;ll make your wallet happy.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/couponluxury/landing.png`]} />
-          <TypographyH3 className="my-4 ">Stores</TypographyH3>
-          <p className="font-mono mb-2">
-            Dive into a comprehensive list of stores, each packed with exclusive
-            deals and discounts. It&apos;s like having a VIP pass to every sale
-            in town.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/couponluxury/stores.png`,
-              `${BASE_PATH}/couponluxury/store.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Categories</TypographyH3>
+          <ProjectsLinks repo={this.github} />
 
-          <p className="font-mono mb-2">
-            Whatever you&apos;re into—fashion, tech, food—you&apos;ll find it
-            neatly organized here. No more endless scrolling; just pick a
-            category and get the best offers instantly.
+          <p className="font-mono mb-2 mt-4">
+            The application manages information related to artists and their musical
+            records, allowing users to perform full CRUD operations while interacting
+            with a relational database in a structured and efficient way.
           </p>
-          <SlideShow images={[`${BASE_PATH}/couponluxury/categories.png`]} />
-          <TypographyH3 className="my-4 mt-8">Custom CMS </TypographyH3>
+
+          <SlideShow images={[
+            `${BASE_PATH}/artistasJDBC/music_homepage.png`,
+            `${BASE_PATH}/artistasJDBC/artist_disquera.png`,
+
+            ]} />
+
+          <TypographyH3 className="my-4 ">Technical Focus</TypographyH3>
           <p className="font-mono mb-2">
-            Powered by Vue.js, this bad boy allows us to keep the content
-            dynamic and up-to-date. From flash sales to limited-time offers, my
-            CMS ensures everything&apos;s live and relevant.
+            This project was especially valuable for understanding how Spring Boot
+            applications are structured, including controllers, services, repositories,
+            and configuration layers. I worked directly with JDBC to handle database
+            connections, queries, and result mapping without relying on ORM frameworks.
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/couponluxury/cms-1.png`,
-              `${BASE_PATH}/couponluxury/cms-2.png`,
-            ]}
-          />
-          <p className="font-mono mb-2 mt-5">
-            Plus, I&apos;ve sprinkled in some extra magic like personalized
-            deal recommendations, user-friendly search features, and a sleek,
-            responsive design that works like a charm on any device.
-          </p>
-          <p className="font-mono mb-2">
-            CouponLuxury isn&apos;t just a website; it&apos;s your personal deal-hunting
-            assistant, ensuring you never miss out on a bargain!
-          </p>
+              `${BASE_PATH}/artistasJDBC/fanaticos_form.png`]}/>
+
+          <TypographyH3 className="my-4 mt-8">Backend & Database</TypographyH3>
+          <TypographyP className="font-mono mb-2">
+            The backend was built using Spring Boot and connected to a MySQL database.
+            This approach helped me better understand SQL queries, prepared statements,
+            and transaction handling, as well as best practices for separating business
+            logic from data access.
+          </TypographyP>
+          <SlideShow 
+            images={[
+              `${BASE_PATH}/artistasJDBC/fanaticos.png`,
+              `${BASE_PATH}/artistasJDBC/artistas_form.png`,
+              ]} />
         </div>
       );
     },
@@ -458,7 +316,7 @@ const projects: Project[] = [
     title: "Jobsi",
     src: "/assets/projects-screenshots/jobsi/login.png",
     screenshots: ["1.png"],
-    live: "https://thebookingdesk.com/",
+    github: "https://github.com/Jobsi-PPI",
     skills: {
       frontend: [
         PROJECT_SKILLS.react,
@@ -474,49 +332,53 @@ const projects: Project[] = [
     get content() {
       return (
         <div>
-          <TypographyP className="font-mono ">
-            The Booking Desk is your ultimate travel consultation hub, designed
-            to turn your wanderlust dreams into reality. With a focus on smooth
-            and visually captivating animations, navigating the site feels like
-            a breeze—it&apos;s almost as if the destinations are calling you.
+          <TypographyP className="font-mono">
+            Jobsi is a micro-jobs platform designed specifically for the community of the
+            Politécnico Jaime Isaza Cadavid. It was created to help students make better
+            use of their free time while simultaneously solving real, everyday needs
+            within the campus, such as logistical support for events, errands, tutoring,
+            translations, personal assistance, and more.
           </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <p className="font-mono mb-2 mt-8">
-            A sleek, modern interface greets you, featuring the latest travel
-            tips, deals, and must-visit spots around the globe.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/the-booking-desk/landing.png`]} />
-          <TypographyH3 className="my-4 mt-8">Blogs</TypographyH3>
-          <p className="font-mono mb-2">
-            Dive into the curated articles written by travel experts. Whether
-            you&apos;re looking for hidden gems or travel hacks, our blog section has
-            you covered.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/the-booking-desk/blogs.png`,
-              `${BASE_PATH}/the-booking-desk/blog.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Sanity CMS</TypographyH3>
 
+          <ProjectsLinks  repo={this.github} />
+
+          <TypographyP className="font-mono mt-4">
+            The platform follows a simple and intuitive workflow: users can publish
+            a task describing their needs along with the payment they are willing to
+            offer, while other users can browse and accept these tasks based on their
+            knowledge, skills, and availability.
+        </TypographyP>
+
+          <SlideShow images={[
+            `${BASE_PATH}/jobsi/home_page_1.png`,
+            `${BASE_PATH}/jobsi/home_page_2.png`,
+            `${BASE_PATH}/jobsi/side_bar.png`,
+
+          ]} />
+
+            <TypographyH3 className="my-4 mt-8">Jobs</TypographyH3>
           <p className="font-mono mb-2">
-            Keeping everything fresh and up-to-date, I&apos;ve integrated Sanity CMS
-            to manage all the content with ease, ensuring you always get the
-            latest and greatest information.
+            Browse and manage the jobs you have published, as well as the jobs you have applied <br />for, all in one place.
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/the-booking-desk/cms-1.png`,
-              `${BASE_PATH}/the-booking-desk/cms-2.png`,
+              `${BASE_PATH}/jobsi/jobs_publicados.png`,
+              `${BASE_PATH}/jobsi/jobs_postulados.png`,
             ]}
           />
-          <p className="font-mono mb-2 my-8">
-            With a stunning 100% score on Lighthouse, The Booking Desk isn&apos;t
-            just beautiful—it&apos;s built to perform. Whether you&apos;re planning your
-            next adventure or just daydreaming, our site delivers a top-notch
-            experience that&apos;s both informative and enjoyable.
+
+          <TypographyH3 className="my-4 mt-8">Register account</TypographyH3>
+          <p className="font-mono mb-2">
+            Users can register by entering their basic personal information, enabling
+            them to fully interact with the platform by posting jobs or applying to
+            available opportunities.
           </p>
+          <SlideShow
+            images={[
+              `${BASE_PATH}/jobsi/login.png`,
+              `${BASE_PATH}/jobsi/register.png`,
+            ]}
+          />
         </div>
       );
     },
