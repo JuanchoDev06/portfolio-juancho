@@ -1,74 +1,73 @@
-# 🚀 My Portfolio Website
+# 🚀 Juan Andrés Correa – 3D Portfolio
 
-Welcome to the repository for my personal portfolio website! This is where I showcase my skills, projects, and a bit of my personality through jaw-dropping 3D animations, slick interactions, and fluid motion. If you're into creative web design, you're in the right place.
+An interactive developer portfolio built with **Next.js**, **TypeScript**, **Tailwind CSS** and **Spline 3D**.
 
-![Portfolio Preview](https://github.com/Naresh-Khatri/Portfolio/blob/main/public/assets/projects-screenshots/portfolio/landing.png?raw=true)
+This portfolio showcases my professional experience, technical skills, and featured projects through an immersive and modern user interface.
+
+![Portfolio Preview](https://github.com/JuanchoDev06/portfolio-juancho/blob/main/public/assets/juancho-link-previews/landing.png)
 
 ## 🔥 Features
 
-- **3D Animations**: Custom-made interactive keyboard using Spline with skills as keycaps that reveal titles and descriptions on hover.
-- **Slick Interactions**: Powered by GSAP and Framer Motion for smooth animations on scroll, hover, and element reveal.
-- **Space Theme**: Particles on a dark background to simulate a cosmic environment, making the experience out of this world.
-- **Responsive Design**: Fully responsive across all devices to ensure the best user experience.
-- **Innovative Web Design**: Combining creativity with functionality to push the boundaries of modern web design.
+- ⌨️ Interactive 3D Keyboard (Spline)
+- 🌙 Light / Dark mode support.
+- 🎬 Smooth animations (GSAP + Framer Motion).
+- 📱 Fully responsive design.
+- 📂 Projects section with detailed case studies.
+- 🧠 Experience & Education timeline.
+- 📄 Downloadable Resume (English & Spanish versions).
+- 📬 Contact section.
 
+
+  
 ## 🛠️ Tech Stack
+![Next.js](https://img.shields.io/badge/Next.js-14-000000?logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-38BDF8?logo=tailwindcss&logoColor=white)
+![GSAP](https://img.shields.io/badge/GSAP-Animation-88CE02?logo=greensock&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-Animation-EF008F?logo=framer&logoColor=white)
+![Spline](https://img.shields.io/badge/Spline-3D-FF6B6B)
+![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?logo=vercel&logoColor=white)
 
 - **Frontend**: Next.js, React, Tailwind CSS, Shadcn, Aceternity UI
 - **Animations**: GSAP, Framer Motion, Spline Runtime
-- **Misc**: Resend, Socketio, Zod
+- **Deployment**: Vercel
 
-## 🚀 Getting Started
+## 📄 Resume
 
-### Prerequisites
+The portfolio includes two downloadable versions of my resume:
+- 🇪🇸 Spanish Version
+- 🇺🇸 English Version
 
-- Node.js (v14+)
-- npm or yarn
 
-### Installation
 
-1. Clone the repository:
+## 🌍 Deployment
 
-    ```bash
-    git clone https://github.com/Naresh-Khatri/Portfolio.git
-    ```
+This project is optimized for deployment on Vercel.
 
-2. Navigate to the project directory:
+1. Push your repository to GitHub
+2. Import it into Vercel
+3. Add environment variables if needed
+4. Deploy 🚀
 
-    ```bash
-    cd Portfolio
-    ```
+## 👨‍💻 About Me
+Software Developer focused on building scalable web applications using modern frontend and backend technologies.
 
-3. Install dependencies:
+Passionate about clean architecture, cloud solutions, and continuous learning.
 
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
+## 🙏 Credits
 
-4. Run the development server:
+This portfolio is based on the open-source template created by:
+**Naresh Khatri**
 
-    ```bash
-    npm run dev
-    # or
-    yarn dev
-    ```
+Original repository: https://github.com/Naresh-Khatri/3d-portfolio
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the magic!
+The original design, 3D keyboard concept, and animation system were created by him.
 
-## 🚀 Deployment
+This version has been fully customized, rebranded, and technically adapted with my own projects, experience, and skills.
 
-This site is deployed on Vercel. For your own deployment, follow these steps:
+Huge respect to the original author for making this project open source ❤️
 
-1. Push your code to a GitHub repository.
-2. Connect your repository to Vercel.
-3. Vercel will handle the deployment process.
+## 📜 License
 
-## 🤝 Contributing
-
-If you'd like to contribute or suggest improvements, feel free to open an issue or submit a pull request. All contributions are welcome!
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
+This project follows the MIT License, based on the original repository. [MIT License](LICENSE).
