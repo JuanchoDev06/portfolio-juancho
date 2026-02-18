@@ -5,7 +5,6 @@ export enum SkillNames {
   HTML = "html",
   CSS = "css",
   REACT = "react",
-  VUE = "vue",
   NEXTJS = "nextjs",
   TAILWIND = "tailwind",
   NODEJS = "nodejs",
@@ -266,7 +265,7 @@ export const EXPERIENCE: Experience[] = [
     startDate: "Apr 2025",
     endDate: "Oct 2025",
     title: "Junior Developer",
-    company: "TCS",
+    company: "Tata Consultancy Services (TCS)",
     description: [
       "Delivered web solutions for diverse clients.",
       "I worked on projects and agile software lifecycles from design to deployment.",

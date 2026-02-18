@@ -233,8 +233,8 @@ const projects: Project[] = [
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/ecoboost/award.png`
-            ]}
+              `${BASE_PATH}/ecoboost/award_ecoboost.png`
+            ]}  
           />
           
         </div>

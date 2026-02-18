@@ -1,6 +1,7 @@
 import styles from './style.module.scss';
 import { translate } from '../../anim';
 import { motion } from 'framer-motion';
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -47,16 +48,7 @@ export default function Footer() {
           animate="enter"
           exit="exit"
         >
-          Blog
-        </motion.li>
-        <motion.li
-          custom={[0.3, 0]}
-          variants={translate}
-          initial="initial"
-          animate="enter"
-          exit="exit"
-        >
-          Newsletter
+          <Link href="#hero">Home</Link>
         </motion.li>
       </ul>
     </div>
